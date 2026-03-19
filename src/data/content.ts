@@ -45,6 +45,7 @@ export interface BikeItem {
 export interface BikesContent {
   title: string;
   intro: string;
+  deposit: string;
   items: BikeItem[];
 }
 
@@ -52,6 +53,7 @@ export interface Place {
   name: string;
   details: string;
   mapUrl: string;
+  mapsLink?: string;
 }
 
 export interface Category {
@@ -95,11 +97,11 @@ export const guidebookContent: Record<Lang, LangContent> = {
       title: "Welcome to Velingrad!",
       intro: "We are thrilled to host you. Please use this guide to find everything you need for a comfortable stay and to discover the best of the spa capital of the Balkans.",
       wifiLabel: "Wi-Fi Network:",
-      wifiValue: "[Insert Network Name]",
+      wifiValue: "The Old Corner House",
       passLabel: "Wi-Fi Password:",
-      passValue: "[Insert Password]",
+      passValue: "the-old-corner-house-39",
       phoneLabel: "Host Phone Number:",
-      phoneValue: "[Insert Your Number]",
+      phoneValue: "+359 87 9606986",
       emergencyLabel: "Emergency Number:",
       emergencyValue: "112",
     },
@@ -143,6 +145,7 @@ export const guidebookContent: Record<Lang, LangContent> = {
     bikes: {
       title: "Bicycle Rentals",
       intro: "We offer two fully serviced bicycles for our guests to explore the city!",
+      deposit: "A refundable deposit of 50 BGN per bicycle is required. The deposit will be returned upon safe return of the bikes.",
       items: [
         {
           name: "How to Unlock",
@@ -168,52 +171,79 @@ export const guidebookContent: Record<Lang, LangContent> = {
             {
               name: "Vitosha Holiday Station",
               details: "1 km – 14 min walk – 7 min bike (Ideal for relaxation)",
-              mapUrl: "",
+              mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2963.3755852386553!2d23.995080876285527!3d42.035125855567756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ab65c78a71cc5d%3A0xd01ae0715c5800bc!2sVitosha!5e0!3m2!1sen!2sbg!4v1773920181196!5m2!1sen!2sbg",
+              mapsLink: "https://www.google.com/maps/search/?api=1&query=42.035126,23.995081",
             },
             {
               name: "Elbrus Aquapark",
               details: "1.2 km – 17 min walk – 8 min bike (Ideal for kids)",
-              mapUrl: "",
+              mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2963.740119666668!2d23.976836176285264!3d42.027307156058825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ab65ea981f4b23%3A0xaee3272b32d56235!2z0KHQn9CQINCl0J7QotCV0Jsg0JXQm9CR0KDQo9Ch!5e0!3m2!1sen!2sbg!4v1773920205083!5m2!1sen!2sbg",
+              mapsLink: "https://www.google.com/maps/search/?api=1&query=42.027307,23.976836",
             },
             {
               name: "Delfin Aquapark",
               details: "750 m – 10 min walk – 6 min bike (Ideal for kids)",
-              mapUrl: "",
+              mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2963.4302500374924!2d23.989976676285533!3d42.03395345564157!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ab657a933621e1%3A0xaf76b248b7aa0d75!2z0JDQutCy0LDQv9Cw0YDQuiDQlNC10LvRhNC40L0!5e0!3m2!1sen!2sbg!4v1773920220392!5m2!1sen!2sbg",
+              mapsLink: "https://www.google.com/maps/search/?api=1&query=42.033953,23.989977",
             },
             {
               name: "Oceana Beach Swimming Complex",
               details: "3.7 km – 51 min walk – 25 min bike",
-              mapUrl: "",
+              mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2964.902571211179!2d23.98128307628415!3d42.00236645762426!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ab6535e448ff17%3A0x67c1ebeb168bc70f!2z0J7RgtC60YDQuNGCINC_0LvRg9Cy0LXQvSDQutC-0LzQv9C70LXQutGBICLQntC60LXQsNC90LjQsCDQkdC40LnRhyI!5e0!3m2!1sen!2sbg!4v1773920243656!5m2!1sen!2sbg",
+              mapsLink: "https://www.google.com/maps/search/?api=1&query=42.002366,23.981283",
             },
           ],
         },
         {
           title: "Parks & City Walks",
           places: [
-            { name: "City Center", details: "200 m – 3 min walk", mapUrl: "" },
+            {
+              name: "City Center",
+              details: "200 m – 3 min walk",
+              mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2963.72888304634!2d23.986612288499575!3d42.02754818186309!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ab657374b30fbb%3A0x79f6a967258e9042!2sCentral%20Fountain%20%22The%20Cup%22!5e0!3m2!1sen!2sbg!4v1773920273188!5m2!1sen!2sbg",
+              mapsLink: "https://www.google.com/maps/search/?api=1&query=42.027548,23.986612",
+            },
             {
               name: "Kleptuza Park & Lake",
               details: "3.4 km – 50 min walk – 20 min bike",
               mapUrl: "",
+              mapsLink: "https://www.google.com/maps/search/?api=1&query=Kleptuza+Park+Velingrad",
             },
             {
               name: "Borov Park",
               details: "700 m – 10 min walk – 6 min bike",
-              mapUrl: "",
+              mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2963.72888304634!2d23.986612288499575!3d42.02754818186309!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ab657b95a24eeb%3A0xa7722b5909340f3!2z0JHQvtGA0L7QsiDQv9Cw0YDQug!5e0!3m2!1sen!2sbg!4v1773920295055!5m2!1sen!2sbg",
+              mapsLink: "https://www.google.com/maps/search/?api=1&query=42.027548,23.986612",
             },
             {
               name: "Velyova Banya Park",
               details: "900 m – 12 min walk – 7 min bike",
-              mapUrl: "",
+              mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1743.9832940233066!2d23.980373619196516!3d42.028749904373335!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ab65c134af6897%3A0x3d3eda8e7fb7d6ca!2z0JLQtdC70YzQvtCy0LAg0LHQsNC90Y8!5e0!3m2!1sen!2sbg!4v1773920316604!5m2!1sen!2sbg",
+              mapsLink: "https://www.google.com/maps/search/?api=1&query=42.028750,23.980374",
             },
           ],
         },
         {
           title: "Dining",
           places: [
-            { name: "Restaurant Borov Park", details: "", mapUrl: "" },
-            { name: "Restaurant Paradise", details: "", mapUrl: "" },
-            { name: "Tavern (Mehana) Demeko", details: "", mapUrl: "" },
+            {
+              name: "Restaurant Borov Park",
+              details: "",
+              mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1743.9832940233066!2d23.980373619196516!3d42.028749904373335!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ab65679987f109%3A0x933b12b9157f94d4!2z0KDQtdGB0YLQvtGA0LDQvdGCICLQkdC-0YDQvtCyINCf0LDRgNC6Ig!5e0!3m2!1sen!2sbg!4v1773920336600!5m2!1sen!2sbg",
+              mapsLink: "https://www.google.com/maps/search/?api=1&query=42.028750,23.980374",
+            },
+            {
+              name: "Restaurant Paradise",
+              details: "",
+              mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2964.310875088254!2d23.98473787628472!3d42.015062956827464!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ab642d36108925%3A0xe5d0b8bdf7d7aea5!2sParadise!5e0!3m2!1sen!2sbg!4v1773920357906!5m2!1sen!2sbg",
+              mapsLink: "https://www.google.com/maps/search/?api=1&query=42.015063,23.984738",
+            },
+            {
+              name: "Tavern (Mehana) Demeko",
+              details: "",
+              mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2963.203357832029!2d23.986125676285702!3d42.03881945533598!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ab65d9e4c81303%3A0x6c312676687b254f!2sDemeko%20Tavern!5e0!3m2!1sen!2sbg!4v1773920376441!5m2!1sen!2sbg",
+              mapsLink: "https://www.google.com/maps/search/?api=1&query=42.038819,23.986126",
+            },
           ],
         },
         {
@@ -222,10 +252,21 @@ export const guidebookContent: Record<Lang, LangContent> = {
             {
               name: "Piano Bar Louis (Grand Hotel Velingrad)",
               details: "",
-              mapUrl: "",
+              mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2964.331257039775!2d23.982053676284625!3d42.014625656854896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ab652e4ae7c663%3A0xdabdbf51c26bce18!2sPiano%20Bar%20Louis%20Velingrad!5e0!3m2!1sen!2sbg!4v1773920400396!5m2!1sen!2sbg",
+              mapsLink: "https://www.google.com/maps/search/?api=1&query=42.014626,23.982054",
             },
-            { name: "Deja Vu Resto & Bar", details: "", mapUrl: "" },
-            { name: "Club NOTO", details: "", mapUrl: "" },
+            {
+              name: "Deja Vu Resto & Bar",
+              details: "",
+              mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2963.7832473287535!2d23.988874276285316!3d42.026382056116965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ab6564eab7e115%3A0x735a2f846c1c41bd!2sDeja%20Vu%20Resto%20%26%20Club!5e0!3m2!1sen!2sbg!4v1773920427701!5m2!1sen!2sbg",
+              mapsLink: "https://www.google.com/maps/search/?api=1&query=42.026382,23.988874",
+            },
+            {
+              name: "Club NOTO",
+              details: "",
+              mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2963.7832473287535!2d23.988874276285316!3d42.026382056116965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ab65f060a59e2b%3A0x7d54dc2e97ac312f!2sNOTO%20Night%20Club!5e0!3m2!1sen!2sbg!4v1773920446621!5m2!1sen!2sbg",
+              mapsLink: "https://www.google.com/maps/search/?api=1&query=42.026382,23.988874",
+            },
           ],
         },
         {
@@ -234,12 +275,14 @@ export const guidebookContent: Record<Lang, LangContent> = {
             {
               name: "Mareski Pharmacy",
               details: "140 m – 2 min walk",
-              mapUrl: "",
+              mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d728.2022243059697!2d23.993193037386963!3d42.02769683062919!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ab65c9344ef78b%3A0x828994a62117c1a8!2z0JDQv9GC0LXQutCwICLQnNCw0YDQtdGI0LrQuCI!5e0!3m2!1sen!2sbg!4v1773920473101!5m2!1sen!2sbg",
+              mapsLink: "https://www.google.com/maps/search/?api=1&query=42.027697,23.993193",
             },
             {
               name: "Pazara Pharmacy",
               details: "350 m – 5 min walk",
-              mapUrl: "",
+              mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d728.2151667228684!2d23.993738716711192!3d42.026566953643865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ab65f7498508c5%3A0x450fbd914c21065f!2z0JDQn9Ci0JXQmtCQINCf0JDQl9CQ0KDQkA!5e0!3m2!1sen!2sbg!4v1773920489346!5m2!1sen!2sbg",
+              mapsLink: "https://www.google.com/maps/search/?api=1&query=42.026567,23.993739",
             },
           ],
         },
@@ -278,11 +321,11 @@ export const guidebookContent: Record<Lang, LangContent> = {
       title: "Добре дошли във Велинград!",
       intro: "Радваме се да ви посрещнем. Моля, използвайте този справочник, за да намерите всичко необходимо за комфортен престой и да откриете най-доброто от спа столицата на Балканите.",
       wifiLabel: "Wi-Fi Мрежа:",
-      wifiValue: "[Въведете Име на Мрежата]",
+      wifiValue: "The Old Corner House",
       passLabel: "Wi-Fi Парола:",
-      passValue: "[Въведете Парола]",
+      passValue: "the-old-corner-house-39",
       phoneLabel: "Телефон на домакина:",
-      phoneValue: "[Въведете Вашия Номер]",
+      phoneValue: "+359 87 9606986",
       emergencyLabel: "Спешни случаи:",
       emergencyValue: "112",
     },
@@ -326,6 +369,7 @@ export const guidebookContent: Record<Lang, LangContent> = {
     bikes: {
       title: "Наем на велосипеди",
       intro: "Предлагаме два напълно обслужени велосипеда, с които нашите гости могат да разгледат града!",
+      deposit: "Изисква се възстановим депозит от 50 лв. на велосипед. Депозитът ще бъде върнат при безопасното връщане на велосипедите.",
       items: [
         {
           name: "Как да отключите",
@@ -352,54 +396,79 @@ export const guidebookContent: Record<Lang, LangContent> = {
             {
               name: "Почивна станция Витоша",
               details: "1 км – 14 мин пеш – 7 мин колело (идеално за почивка)",
-              mapUrl: "",
+              mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2963.3755852386553!2d23.995080876285527!3d42.035125855567756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ab65c78a71cc5d%3A0xd01ae0715c5800bc!2sVitosha!5e0!3m2!1sen!2sbg!4v1773920181196!5m2!1sen!2sbg",
+              mapsLink: "https://www.google.com/maps/search/?api=1&query=42.035126,23.995081",
             },
             {
               name: "Аквапарк Елбрус",
-              details:
-                "1.2 км – 17 мин пеш – 8 мин колело (идеално за деца)",
-              mapUrl: "",
+              details: "1.2 км – 17 мин пеш – 8 мин колело (идеално за деца)",
+              mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2963.740119666668!2d23.976836176285264!3d42.027307156058825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ab65ea981f4b23%3A0xaee3272b32d56235!2z0KHQn9CQINCl0J7QotCV0Jsg0JXQm9CR0KDQo9Ch!5e0!3m2!1sen!2sbg!4v1773920205083!5m2!1sen!2sbg",
+              mapsLink: "https://www.google.com/maps/search/?api=1&query=42.027307,23.976836",
             },
             {
               name: "Аквапарк Делфин",
-              details:
-                "750 м – 10 мин пеш – 6 мин колело (идеално за деца)",
-              mapUrl: "",
+              details: "750 м – 10 мин пеш – 6 мин колело (идеално за деца)",
+              mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2963.4302500374924!2d23.989976676285533!3d42.03395345564157!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ab657a933621e1%3A0xaf76b248b7aa0d75!2z0JDQutCy0LDQv9Cw0YDQuiDQlNC10LvRhNC40L0!5e0!3m2!1sen!2sbg!4v1773920220392!5m2!1sen!2sbg",
+              mapsLink: "https://www.google.com/maps/search/?api=1&query=42.033953,23.989977",
             },
             {
               name: "Плувен комплекс \u201cОкеана Бийч\u201d",
               details: "3.7 км – 51 мин пеш – 25 мин колело",
-              mapUrl: "",
+              mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2964.902571211179!2d23.98128307628415!3d42.00236645762426!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ab6535e448ff17%3A0x67c1ebeb168bc70f!2z0J7RgtC60YDQuNGCINC_0LvRg9Cy0LXQvSDQutC-0LzQv9C70LXQutGBICLQntC60LXQsNC90LjQsCDQkdC40LnRhyI!5e0!3m2!1sen!2sbg!4v1773920243656!5m2!1sen!2sbg",
+              mapsLink: "https://www.google.com/maps/search/?api=1&query=42.002366,23.981283",
             },
           ],
         },
         {
           title: "Паркове и места за разходка в града",
           places: [
-            { name: "Център", details: "200 м – 3 мин пеш", mapUrl: "" },
+            {
+              name: "Център",
+              details: "200 м – 3 мин пеш",
+              mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2963.72888304634!2d23.986612288499575!3d42.02754818186309!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ab657374b30fbb%3A0x79f6a967258e9042!2sCentral%20Fountain%20%22The%20Cup%22!5e0!3m2!1sen!2sbg!4v1773920273188!5m2!1sen!2sbg",
+              mapsLink: "https://www.google.com/maps/search/?api=1&query=42.027548,23.986612",
+            },
             {
               name: "Парк и Езеро Клептуза",
               details: "3.4 км – 50 мин пеш – 20 мин колело",
               mapUrl: "",
+              mapsLink: "https://www.google.com/maps/search/?api=1&query=Kleptuza+Park+Velingrad",
             },
             {
               name: "Боров Парк",
               details: "700 м – 10 мин пеш – 6 мин колело",
-              mapUrl: "",
+              mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2963.72888304634!2d23.986612288499575!3d42.02754818186309!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ab657b95a24eeb%3A0xa7722b5909340f3!2z0JHQvtGA0L7QsiDQv9Cw0YDQug!5e0!3m2!1sen!2sbg!4v1773920295055!5m2!1sen!2sbg",
+              mapsLink: "https://www.google.com/maps/search/?api=1&query=42.027548,23.986612",
             },
             {
               name: "Парк Вельова Баня",
               details: "900 м – 12 мин пеш – 7 мин колело",
-              mapUrl: "",
+              mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1743.9832940233066!2d23.980373619196516!3d42.028749904373335!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ab65c134af6897%3A0x3d3eda8e7fb7d6ca!2z0JLQtdC70YzQvtCy0LAg0LHQsNC90Y8!5e0!3m2!1sen!2sbg!4v1773920316604!5m2!1sen!2sbg",
+              mapsLink: "https://www.google.com/maps/search/?api=1&query=42.028750,23.980374",
             },
           ],
         },
         {
           title: "Места за хапване",
           places: [
-            { name: "Ресторант Боров Парк", details: "", mapUrl: "" },
-            { name: "Ресторант Парадайз", details: "", mapUrl: "" },
-            { name: "Механа Демеко", details: "", mapUrl: "" },
+            {
+              name: "Ресторант Боров Парк",
+              details: "",
+              mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1743.9832940233066!2d23.980373619196516!3d42.028749904373335!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ab65679987f109%3A0x933b12b9157f94d4!2z0KDQtdGB0YLQvtGA0LDQvdGCICLQkdC-0YDQvtCyINCf0LDRgNC6Ig!5e0!3m2!1sen!2sbg!4v1773920336600!5m2!1sen!2sbg",
+              mapsLink: "https://www.google.com/maps/search/?api=1&query=42.028750,23.980374",
+            },
+            {
+              name: "Ресторант Парадайз",
+              details: "",
+              mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2964.310875088254!2d23.98473787628472!3d42.015062956827464!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ab642d36108925%3A0xe5d0b8bdf7d7aea5!2sParadise!5e0!3m2!1sen!2sbg!4v1773920357906!5m2!1sen!2sbg",
+              mapsLink: "https://www.google.com/maps/search/?api=1&query=42.015063,23.984738",
+            },
+            {
+              name: "Механа Демеко",
+              details: "",
+              mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2963.203357832029!2d23.986125676285702!3d42.03881945533598!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ab65d9e4c81303%3A0x6c312676687b254f!2sDemeko%20Tavern!5e0!3m2!1sen!2sbg!4v1773920376441!5m2!1sen!2sbg",
+              mapsLink: "https://www.google.com/maps/search/?api=1&query=42.038819,23.986126",
+            },
           ],
         },
         {
@@ -408,10 +477,21 @@ export const guidebookContent: Record<Lang, LangContent> = {
             {
               name: "Пиано Бар Лоуис (Гранд Хотел Велинград)",
               details: "",
-              mapUrl: "",
+              mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2964.331257039775!2d23.982053676284625!3d42.014625656854896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ab652e4ae7c663%3A0xdabdbf51c26bce18!2sPiano%20Bar%20Louis%20Velingrad!5e0!3m2!1sen!2sbg!4v1773920400396!5m2!1sen!2sbg",
+              mapsLink: "https://www.google.com/maps/search/?api=1&query=42.014626,23.982054",
             },
-            { name: "Deja Vu Resto & Bar", details: "", mapUrl: "" },
-            { name: "Club NOTO", details: "", mapUrl: "" },
+            {
+              name: "Deja Vu Resto & Bar",
+              details: "",
+              mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2963.7832473287535!2d23.988874276285316!3d42.026382056116965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ab6564eab7e115%3A0x735a2f846c1c41bd!2sDeja%20Vu%20Resto%20%26%20Club!5e0!3m2!1sen!2sbg!4v1773920427701!5m2!1sen!2sbg",
+              mapsLink: "https://www.google.com/maps/search/?api=1&query=42.026382,23.988874",
+            },
+            {
+              name: "Club NOTO",
+              details: "",
+              mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2963.7832473287535!2d23.988874276285316!3d42.026382056116965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ab65f060a59e2b%3A0x7d54dc2e97ac312f!2sNOTO%20Night%20Club!5e0!3m2!1sen!2sbg!4v1773920446621!5m2!1sen!2sbg",
+              mapsLink: "https://www.google.com/maps/search/?api=1&query=42.026382,23.988874",
+            },
           ],
         },
         {
@@ -420,12 +500,14 @@ export const guidebookContent: Record<Lang, LangContent> = {
             {
               name: "Аптека Марешки",
               details: "140 м – 2 мин пеш",
-              mapUrl: "",
+              mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d728.2022243059697!2d23.993193037386963!3d42.02769683062919!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ab65c9344ef78b%3A0x828994a62117c1a8!2z0JDQv9GC0LXQutCwICLQnNCw0YDQtdGI0LrQuCI!5e0!3m2!1sen!2sbg!4v1773920473101!5m2!1sen!2sbg",
+              mapsLink: "https://www.google.com/maps/search/?api=1&query=42.027697,23.993193",
             },
             {
               name: "Аптека Пазара",
               details: "350 м – 5 мин пеш",
-              mapUrl: "",
+              mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d728.2151667228684!2d23.993738716711192!3d42.026566953643865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ab65f7498508c5%3A0x450fbd914c21065f!2z0JDQn9Ci0JXQmtCQINCf0JDQl9CQ0KDQkA!5e0!3m2!1sen!2sbg!4v1773920489346!5m2!1sen!2sbg",
+              mapsLink: "https://www.google.com/maps/search/?api=1&query=42.026567,23.993739",
             },
           ],
         },
@@ -464,11 +546,11 @@ export const guidebookContent: Record<Lang, LangContent> = {
       title: "Добро пожаловать в Велинград!",
       intro: "Мы рады приветствовать вас. Пожалуйста, используйте это руководство, чтобы найти все необходимое для комфортного проживания и открыть для себя лучшее в спа-столице Балкан.",
       wifiLabel: "Сеть Wi-Fi:",
-      wifiValue: "[Введите имя сети]",
+      wifiValue: "The Old Corner House",
       passLabel: "Пароль Wi-Fi:",
-      passValue: "[Введите пароль]",
+      passValue: "the-old-corner-house-39",
       phoneLabel: "Телефон хозяина:",
-      phoneValue: "[Введите ваш номер]",
+      phoneValue: "+359 87 9606986",
       emergencyLabel: "Экстренные службы:",
       emergencyValue: "112",
     },
@@ -512,6 +594,7 @@ export const guidebookContent: Record<Lang, LangContent> = {
     bikes: {
       title: "Аренда велосипедов",
       intro: "Мы предлагаем нашим гостям два полностью обслуженных велосипеда для прогулок по городу!",
+      deposit: "Требуется возвратный залог в размере 50 BGN за велосипед. Залог будет возвращен при безопасном возврате велосипедов.",
       items: [
         {
           name: "Как разблокировать",
@@ -536,63 +619,79 @@ export const guidebookContent: Record<Lang, LangContent> = {
           places: [
             {
               name: "База отдыха \u2018Витоша\u2019",
-              details:
-                "1 км – 14 мин пешком – 7 мин на велосипеде (идеально для отдыха)",
-              mapUrl: "",
+              details: "1 км – 14 мин пешком – 7 мин на велосипеде (идеально для отдыха)",
+              mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2963.3755852386553!2d23.995080876285527!3d42.035125855567756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ab65c78a71cc5d%3A0xd01ae0715c5800bc!2sVitosha!5e0!3m2!1sen!2sbg!4v1773920181196!5m2!1sen!2sbg",
+              mapsLink: "https://www.google.com/maps/search/?api=1&query=42.035126,23.995081",
             },
             {
               name: "Аквапарк \u2018Эльбрус\u2019",
-              details:
-                "1.2 км – 17 мин пешком – 8 мин на велосипеде (идеально для детей)",
-              mapUrl: "",
+              details: "1.2 км – 17 мин пешком – 8 мин на велосипеде (идеально для детей)",
+              mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2963.740119666668!2d23.976836176285264!3d42.027307156058825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ab65ea981f4b23%3A0xaee3272b32d56235!2z0KHQn9CQINCl0J7QotCV0Jsg0JXQm9CR0KDQo9Ch!5e0!3m2!1sen!2sbg!4v1773920205083!5m2!1sen!2sbg",
+              mapsLink: "https://www.google.com/maps/search/?api=1&query=42.027307,23.976836",
             },
             {
               name: "Аквапарк \u2018Дельфин\u2019",
-              details:
-                "750 м – 10 мин пешком – 6 мин на велосипеде (идеально для детей)",
-              mapUrl: "",
+              details: "750 м – 10 мин пешком – 6 мин на велосипеде (идеально для детей)",
+              mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2963.4302500374924!2d23.989976676285533!3d42.03395345564157!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ab657a933621e1%3A0xaf76b248b7aa0d75!2z0JDQutCy0LDQv9Cw0YDQuiDQlNC10LvRhNC40L0!5e0!3m2!1sen!2sbg!4v1773920220392!5m2!1sen!2sbg",
+              mapsLink: "https://www.google.com/maps/search/?api=1&query=42.033953,23.989977",
             },
             {
               name: "Плавательный комплекс \u2018Океана Бич\u2019",
               details: "3.7 км – 51 мин пешком – 25 мин на велосипеде",
-              mapUrl: "",
+              mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2964.902571211179!2d23.98128307628415!3d42.00236645762426!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ab6535e448ff17%3A0x67c1ebeb168bc70f!2z0J7RgtC60YDQuNGCINC_0LvRg9Cy0LXQvSDQutC-0LzQv9C70LXQutGBICLQntC60LXQsNC90LjQsCDQkdC40LnRhyI!5e0!3m2!1sen!2sbg!4v1773920243656!5m2!1sen!2sbg",
+              mapsLink: "https://www.google.com/maps/search/?api=1&query=42.002366,23.981283",
             },
           ],
         },
         {
           title: "Парки и места для прогулок в городе",
           places: [
-            { name: "Центр", details: "200 м – 3 мин пешком", mapUrl: "" },
+            {
+              name: "Центр",
+              details: "200 м – 3 мин пешком",
+              mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2963.72888304634!2d23.986612288499575!3d42.02754818186309!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ab657374b30fbb%3A0x79f6a967258e9042!2sCentral%20Fountain%20%22The%20Cup%22!5e0!3m2!1sen!2sbg!4v1773920273188!5m2!1sen!2sbg",
+              mapsLink: "https://www.google.com/maps/search/?api=1&query=42.027548,23.986612",
+            },
             {
               name: "Парк и озеро Клептуза",
               details: "3.4 км – 50 мин пешком – 20 мин на велосипеде",
               mapUrl: "",
+              mapsLink: "https://www.google.com/maps/search/?api=1&query=Kleptuza+Park+Velingrad",
             },
             {
               name: "Боров Парк",
               details: "700 м – 10 мин пешком – 6 мин на велосипеде",
-              mapUrl: "",
+              mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2963.72888304634!2d23.986612288499575!3d42.02754818186309!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ab657b95a24eeb%3A0xa7722b5909340f3!2z0JHQvtGA0L7QsiDQv9Cw0YDQug!5e0!3m2!1sen!2sbg!4v1773920295055!5m2!1sen!2sbg",
+              mapsLink: "https://www.google.com/maps/search/?api=1&query=42.027548,23.986612",
             },
             {
               name: "Парк Вельова Баня",
               details: "900 м – 12 мин пешком – 7 мин на велосипеде",
-              mapUrl: "",
+              mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1743.9832940233066!2d23.980373619196516!3d42.028749904373335!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ab65c134af6897%3A0x3d3eda8e7fb7d6ca!2z0JLQtdC70YzQvtCy0LAg0LHQsNC90Y8!5e0!3m2!1sen!2sbg!4v1773920316604!5m2!1sen!2sbg",
+              mapsLink: "https://www.google.com/maps/search/?api=1&query=42.028750,23.980374",
             },
           ],
         },
         {
           title: "Где поесть",
           places: [
-            { name: "Ресторан \u2018Боров Парк\u2019", details: "", mapUrl: "" },
+            {
+              name: "Ресторан \u2018Боров Парк\u2019",
+              details: "",
+              mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1743.9832940233066!2d23.980373619196516!3d42.028749904373335!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ab65679987f109%3A0x933b12b9157f94d4!2z0KDQtdGB0YLQvtGA0LDQvdGCICLQkdC-0YDQvtCyINCf0LDRgNC6Ig!5e0!3m2!1sen!2sbg!4v1773920336600!5m2!1sen!2sbg",
+              mapsLink: "https://www.google.com/maps/search/?api=1&query=42.028750,23.980374",
+            },
             {
               name: "Ресторан \u2018Парадайз\u2019 (Paradise)",
               details: "",
-              mapUrl: "",
+              mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2964.310875088254!2d23.98473787628472!3d42.015062956827464!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ab642d36108925%3A0xe5d0b8bdf7d7aea5!2sParadise!5e0!3m2!1sen!2sbg!4v1773920357906!5m2!1sen!2sbg",
+              mapsLink: "https://www.google.com/maps/search/?api=1&query=42.015063,23.984738",
             },
             {
               name: "Механа (Таверна) \u2018Демеко\u2019",
               details: "",
-              mapUrl: "",
+              mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2963.203357832029!2d23.986125676285702!3d42.03881945533598!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ab65d9e4c81303%3A0x6c312676687b254f!2sDemeko%20Tavern!5e0!3m2!1sen!2sbg!4v1773920376441!5m2!1sen!2sbg",
+              mapsLink: "https://www.google.com/maps/search/?api=1&query=42.038819,23.986126",
             },
           ],
         },
@@ -602,10 +701,21 @@ export const guidebookContent: Record<Lang, LangContent> = {
             {
               name: "Пиано-бар \u2018Лоуис\u2019 (Louis) - Гранд Отель Велинград",
               details: "",
-              mapUrl: "",
+              mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2964.331257039775!2d23.982053676284625!3d42.014625656854896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ab652e4ae7c663%3A0xdabdbf51c26bce18!2sPiano%20Bar%20Louis%20Velingrad!5e0!3m2!1sen!2sbg!4v1773920400396!5m2!1sen!2sbg",
+              mapsLink: "https://www.google.com/maps/search/?api=1&query=42.014626,23.982054",
             },
-            { name: "Deja Vu Resto & Bar", details: "", mapUrl: "" },
-            { name: "Club NOTO", details: "", mapUrl: "" },
+            {
+              name: "Deja Vu Resto & Bar",
+              details: "",
+              mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2963.7832473287535!2d23.988874276285316!3d42.026382056116965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ab6564eab7e115%3A0x735a2f846c1c41bd!2sDeja%20Vu%20Resto%20%26%20Club!5e0!3m2!1sen!2sbg!4v1773920427701!5m2!1sen!2sbg",
+              mapsLink: "https://www.google.com/maps/search/?api=1&query=42.026382,23.988874",
+            },
+            {
+              name: "Club NOTO",
+              details: "",
+              mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2963.7832473287535!2d23.988874276285316!3d42.026382056116965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ab65f060a59e2b%3A0x7d54dc2e97ac312f!2sNOTO%20Night%20Club!5e0!3m2!1sen!2sbg!4v1773920446621!5m2!1sen!2sbg",
+              mapsLink: "https://www.google.com/maps/search/?api=1&query=42.026382,23.988874",
+            },
           ],
         },
         {
@@ -614,12 +724,14 @@ export const guidebookContent: Record<Lang, LangContent> = {
             {
               name: "Аптека \u2018Марешки\u2019",
               details: "140 м – 2 мин пешком",
-              mapUrl: "",
+              mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d728.2022243059697!2d23.993193037386963!3d42.02769683062919!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ab65c9344ef78b%3A0x828994a62117c1a8!2z0JDQv9GC0LXQutCwICLQnNCw0YDQtdGI0LrQuCI!5e0!3m2!1sen!2sbg!4v1773920473101!5m2!1sen!2sbg",
+              mapsLink: "https://www.google.com/maps/search/?api=1&query=42.027697,23.993193",
             },
             {
               name: "Аптека \u2018Пазара\u2019",
               details: "350 м – 5 мин пешком",
-              mapUrl: "",
+              mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d728.2151667228684!2d23.993738716711192!3d42.026566953643865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ab65f7498508c5%3A0x450fbd914c21065f!2z0JDQn9Ci0JXQmtCQINCf0JDQl9CQ0KDQkA!5e0!3m2!1sen!2sbg!4v1773920489346!5m2!1sen!2sbg",
+              mapsLink: "https://www.google.com/maps/search/?api=1&query=42.026567,23.993739",
             },
           ],
         },

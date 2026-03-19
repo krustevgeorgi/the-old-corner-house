@@ -12,12 +12,12 @@ import {
 import { navLabels, type Lang } from "@/data/content";
 
 const navItems = [
-  { key: "home", href: "", icon: Home, image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&h=300&fit=crop", gradient: "from-amber-800/60" },
-  { key: "rules", href: "/rules", icon: ScrollText, image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop", gradient: "from-stone-800/60" },
-  { key: "appliances", href: "/appliances", icon: Settings, image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&h=300&fit=crop", gradient: "from-zinc-800/60" },
-  { key: "bikes", href: "/bikes", icon: Bike, image: "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=400&h=300&fit=crop", gradient: "from-emerald-900/60" },
-  { key: "city-guide", href: "/city-guide", icon: MapPin, image: "https://images.unsplash.com/photo-1519998056459-e0e82a51ec1e?w=400&h=300&fit=crop", gradient: "from-sky-900/60" },
-  { key: "trails", href: "/trails", icon: TreePine, image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400&h=300&fit=crop", gradient: "from-green-900/60" },
+  { key: "home", href: "", icon: Home, image: "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=400&h=300&fit=crop&q=80", gradient: "from-amber-900/70" },
+  { key: "rules", href: "/rules", icon: ScrollText, image: "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=400&h=300&fit=crop&q=80", gradient: "from-stone-900/70" },
+  { key: "appliances", href: "/appliances", icon: Settings, image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&h=300&fit=crop&q=80", gradient: "from-zinc-900/70" },
+  { key: "bikes", href: "/bikes", icon: Bike, image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop&q=80", gradient: "from-emerald-900/70" },
+  { key: "city-guide", href: "/city-guide", icon: MapPin, image: "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=400&h=300&fit=crop&q=80", gradient: "from-sky-900/70" },
+  { key: "trails", href: "/trails", icon: TreePine, image: "https://images.unsplash.com/photo-1501555088652-021faa106b9b?w=400&h=300&fit=crop&q=80", gradient: "from-green-900/70" },
 ];
 
 export default function NavCards({ lang }: { lang: Lang }) {
@@ -40,11 +40,11 @@ export default function NavCards({ lang }: { lang: Lang }) {
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               loading="lazy"
             />
-            <div className={`absolute inset-0 bg-gradient-to-t ${gradient} to-transparent`} />
+            <div className={`absolute inset-0 bg-gradient-to-t ${gradient} via-transparent to-transparent`} />
             <div className="absolute bottom-0 left-0 right-0 p-3.5">
               <div className="flex items-center gap-2">
-                <Icon size={16} className="text-white/90" strokeWidth={1.5} />
-                <span className="text-white text-sm font-medium tracking-wide">
+                <Icon size={15} className="text-white/90" strokeWidth={1.5} />
+                <span className="text-white text-sm font-medium tracking-wide drop-shadow-sm">
                   {labels[key]}
                 </span>
               </div>
