@@ -206,8 +206,8 @@ export const guidebookContent: Record<Lang, LangContent> = {
             {
               name: "Kleptuza Park & Lake",
               details: "3.4 km – 50 min walk – 20 min bike",
-              mapUrl: "",
-              mapsLink: "https://www.google.com/maps/search/?api=1&query=Kleptuza+Park+Velingrad",
+              mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2965.003913665004!2d23.978534476284!3d42.000191557760836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ab650c4ba55c57%3A0xe5d0e7f6899392b2!2sPark%20%22Kleptuza%22!5e0!3m2!1sen!2sbg!4v1773924402263!5m2!1sen!2sbg",
+              mapsLink: "https://www.google.com/maps/search/?api=1&query=42.000192,23.978534",
             },
             {
               name: "Borov Park",
@@ -431,8 +431,8 @@ export const guidebookContent: Record<Lang, LangContent> = {
             {
               name: "Парк и Езеро Клептуза",
               details: "3.4 км – 50 мин пеш – 20 мин колело",
-              mapUrl: "",
-              mapsLink: "https://www.google.com/maps/search/?api=1&query=Kleptuza+Park+Velingrad",
+              mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2965.003913665004!2d23.978534476284!3d42.000191557760836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ab650c4ba55c57%3A0xe5d0e7f6899392b2!2sPark%20%22Kleptuza%22!5e0!3m2!1sen!2sbg!4v1773924402263!5m2!1sen!2sbg",
+              mapsLink: "https://www.google.com/maps/search/?api=1&query=42.000192,23.978534",
             },
             {
               name: "Боров Парк",
@@ -655,8 +655,8 @@ export const guidebookContent: Record<Lang, LangContent> = {
             {
               name: "Парк и озеро Клептуза",
               details: "3.4 км – 50 мин пешком – 20 мин на велосипеде",
-              mapUrl: "",
-              mapsLink: "https://www.google.com/maps/search/?api=1&query=Kleptuza+Park+Velingrad",
+              mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2965.003913665004!2d23.978534476284!3d42.000191557760836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ab650c4ba55c57%3A0xe5d0e7f6899392b2!2sPark%20%22Kleptuza%22!5e0!3m2!1sen!2sbg!4v1773924402263!5m2!1sen!2sbg",
+              mapsLink: "https://www.google.com/maps/search/?api=1&query=42.000192,23.978534",
             },
             {
               name: "Боров Парк",
