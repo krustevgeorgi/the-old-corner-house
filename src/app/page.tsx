@@ -2,7 +2,6 @@
 
 import { useRouter } from "next/navigation";
 import { supportedLanguages, languageNames, type Lang } from "@/data/content";
-import { Globe } from "lucide-react";
 
 export default function LandingPage() {
   const router = useRouter();
@@ -12,17 +11,15 @@ export default function LandingPage() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-primary to-primary-light p-6">
-      <div className="min-w-[320px] max-w-[380px] w-full text-center">
-        <div className="mb-8">
-          <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-            <Globe size={32} className="text-white" />
-          </div>
-          <h1 className="text-2xl font-bold text-white mb-2">
-            Welcome / Добре дошли / Добро пожаловать
+    <div className="min-h-screen flex items-center justify-center bg-warm-light p-6">
+      <div className="min-w-[320px] max-w-[420px] w-full text-center">
+        <div className="mb-10">
+          <h1 className="text-3xl font-light tracking-tight text-text mb-2">
+            The Old Corner House
           </h1>
-          <p className="text-white/80 text-sm">
-            Select your language to continue
+          <div className="w-12 h-px bg-accent mx-auto mb-4" />
+          <p className="text-text-muted text-sm font-light tracking-wide">
+            Velingrad Guest Guide
           </p>
         </div>
 
@@ -31,7 +28,7 @@ export default function LandingPage() {
             <button
               key={lang}
               onClick={() => selectLang(lang)}
-              className="w-full py-3.5 px-6 bg-white text-primary font-semibold rounded-xl shadow-md hover:shadow-lg hover:scale-[1.02] transition-all text-lg"
+              className="w-full py-4 px-6 bg-white text-text font-light rounded-2xl border border-border hover:border-accent hover:shadow-sm transition-all text-lg tracking-wide"
             >
               {languageNames[lang]}
             </button>

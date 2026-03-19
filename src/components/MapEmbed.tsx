@@ -11,13 +11,9 @@ export default function MapEmbed({
 }) {
   if (!mapUrl) {
     return (
-      <div className="w-full h-40 bg-gray-100 rounded-lg flex flex-col items-center justify-center text-text-muted text-sm border border-dashed border-border print:hidden">
-        <MapPin size={24} className="mb-1 opacity-50" />
-        <span>Google Maps embed for</span>
-        <span className="font-medium text-text">{name}</span>
-        <span className="text-xs mt-1 opacity-60">
-          Replace mapUrl in content.ts
-        </span>
+      <div className="w-full h-36 bg-warm-light rounded-xl flex flex-col items-center justify-center text-text-muted text-sm border border-dashed border-border print:hidden">
+        <MapPin size={20} className="mb-1 text-accent opacity-50" />
+        <span className="font-light text-xs">{name}</span>
       </div>
     );
   }
@@ -33,7 +29,7 @@ export default function MapEmbed({
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
         title={`Map: ${name}`}
-        className="rounded-lg"
+        className="rounded-xl"
       />
     </div>
   );

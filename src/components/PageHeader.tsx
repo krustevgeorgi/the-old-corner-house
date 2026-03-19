@@ -8,11 +8,12 @@ export default function PageHeader({
   icon?: ReactNode;
 }) {
   return (
-    <div className="bg-primary text-white px-5 pt-6 pb-4 print:bg-white print:text-black print:border-b-2 print:border-black print:px-0">
-      <div className="flex items-center gap-2">
-        {icon && <span className="print:hidden">{icon}</span>}
-        <h1 className="text-xl font-bold">{title}</h1>
+    <div className="px-6 pt-6 pb-4 print:px-0 print:border-b print:border-black">
+      <div className="flex items-center gap-3">
+        {icon && <span className="text-accent print:hidden">{icon}</span>}
+        <h1 className="text-xl font-light tracking-tight text-text">{title}</h1>
       </div>
+      <div className="w-8 h-px bg-accent mt-3" />
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import { guidebookContent, supportedLanguages, type Lang } from "@/data/content";
 import PageHeader from "@/components/PageHeader";
+import BackLink from "@/components/BackLink";
 import { Settings } from "lucide-react";
 
 export function generateStaticParams() {
@@ -15,19 +16,22 @@ export default async function AppliancesPage({
   const content = guidebookContent[lang as Lang]?.appliances ?? guidebookContent.en.appliances;
 
   return (
-    <div>
-      <PageHeader title={content.title} icon={<Settings size={22} />} />
+    <div className="pt-14">
+      <div className="px-6 mb-2">
+        <BackLink href={`/${lang}`} />
+      </div>
+      <PageHeader title={content.title} icon={<Settings size={20} />} />
 
-      <div className="px-5 py-5 space-y-4">
+      <div className="px-6 py-5 space-y-3">
         {content.items.map((item, i) => (
           <div
             key={i}
-            className="p-4 rounded-xl border border-border bg-gray-50 print:bg-white print:border-gray-300 print:break-inside-avoid"
+            className="p-4 rounded-2xl bg-white border border-border print:bg-white print:border-gray-300 print:break-inside-avoid"
           >
-            <h3 className="font-bold text-sm text-primary print:text-black mb-1.5">
+            <h3 className="font-medium text-sm text-text mb-1.5">
               {item.name}
             </h3>
-            <p className="text-sm text-text-muted print:text-black leading-relaxed">
+            <p className="text-sm text-text-muted font-light leading-relaxed">
               {item.instruction}
             </p>
           </div>
