@@ -11,12 +11,13 @@ import {
 } from "lucide-react";
 import { navLabels, type Lang } from "@/data/content";
 
+// To use your own photos, place them in public/images/ and update paths below
 const navItems = [
-  { key: "home", href: "", icon: Home, image: "/images/home-cover.jpg", gradient: "from-amber-900/70" },
+  { key: "home", href: "", icon: Home, image: "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=400&h=300&fit=crop&q=80", gradient: "from-amber-900/70" },
   { key: "rules", href: "/rules", icon: ScrollText, image: "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=400&h=300&fit=crop&q=80", gradient: "from-stone-900/70" },
-  { key: "appliances", href: "/appliances", icon: Settings, image: "/images/appliances-cover.jpg", gradient: "from-zinc-900/70" },
-  { key: "bikes", href: "/bikes", icon: Bike, image: "/images/bikes-cover.jpg", gradient: "from-emerald-900/70" },
-  { key: "city-guide", href: "/city-guide", icon: MapPin, image: "/images/city-guide-cover.jpg", gradient: "from-sky-900/70" },
+  { key: "appliances", href: "/appliances", icon: Settings, image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&h=300&fit=crop&q=80", gradient: "from-zinc-900/70" },
+  { key: "bikes", href: "/bikes", icon: Bike, image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop&q=80", gradient: "from-emerald-900/70" },
+  { key: "city-guide", href: "/city-guide", icon: MapPin, image: "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=400&h=300&fit=crop&q=80", gradient: "from-sky-900/70" },
   { key: "trails", href: "/trails", icon: TreePine, image: "https://images.unsplash.com/photo-1501555088652-021faa106b9b?w=400&h=300&fit=crop&q=80", gradient: "from-green-900/70" },
 ];
 
