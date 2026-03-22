@@ -34,6 +34,7 @@ export interface WelcomeContent {
   locationValue: string;
   locationMapUrl: string;
   entryTitle: string;
+  entryButtonLabel: string;
   entrySteps: EntryStep[];
   essentialsTitle: string;
 }
@@ -122,10 +123,11 @@ export const guidebookContent: Record<Lang, LangContent> = {
       emergencyLabel: "Emergency Number:",
       emergencyValue: "112",
       locationLabel: "Property Address:",
-      locationValue: "The Old Corner House, Velingrad",
-      locationMapUrl: "https://www.google.com/maps/search/?api=1&query=The+Old+Corner+House+Velingrad",
+      locationValue: "кв. Лъджене, ul. \"Vincho Goranov\" 39",
+      locationMapUrl: "https://maps.app.goo.gl/kYS4rwdpnPi2RzyeA?g_st=ic",
       essentialsTitle: "Essentials",
       entryTitle: "How to Enter the Property",
+      entryButtonLabel: "Entry Instructions",
       entrySteps: [
         {
           title: "Step 1: Find the Keybox",
@@ -369,10 +371,11 @@ export const guidebookContent: Record<Lang, LangContent> = {
       emergencyLabel: "Спешни случаи:",
       emergencyValue: "112",
       locationLabel: "Адрес на имота:",
-      locationValue: "The Old Corner House, Велинград",
-      locationMapUrl: "https://www.google.com/maps/search/?api=1&query=The+Old+Corner+House+Velingrad",
+      locationValue: "кв. Лъджене, ул. \"Винчо Горанов\" 39",
+      locationMapUrl: "https://maps.app.goo.gl/kYS4rwdpnPi2RzyeA?g_st=ic",
       essentialsTitle: "Основна информация",
       entryTitle: "Как да влезете в имота",
+      entryButtonLabel: "Инструкции за вход",
       entrySteps: [
         {
           title: "Стъпка 1: Намерете кутията за ключ",
@@ -617,10 +620,11 @@ export const guidebookContent: Record<Lang, LangContent> = {
       emergencyLabel: "Экстренные службы:",
       emergencyValue: "112",
       locationLabel: "Адрес объекта:",
-      locationValue: "The Old Corner House, Велинград",
-      locationMapUrl: "https://www.google.com/maps/search/?api=1&query=The+Old+Corner+House+Velingrad",
+      locationValue: "кв. Лъджене, ул. \"Винчо Горанов\" 39",
+      locationMapUrl: "https://maps.app.goo.gl/kYS4rwdpnPi2RzyeA?g_st=ic",
       essentialsTitle: "Основная информация",
       entryTitle: "Как попасть в квартиру",
+      entryButtonLabel: "Инструкции по входу",
       entrySteps: [
         {
           title: "Шаг 1: Найдите ключницу",

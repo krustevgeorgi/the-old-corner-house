@@ -1,6 +1,7 @@
+import Link from "next/link";
 import { guidebookContent, supportedLanguages, type Lang } from "@/data/content";
 import NavCards from "@/components/NavCards";
-import { Wifi, Phone, ShieldAlert, MapPin, KeyRound, ImageIcon, ExternalLink } from "lucide-react";
+import { Wifi, Phone, ShieldAlert, MapPin, KeyRound, ExternalLink, ChevronRight } from "lucide-react";
 
 export function generateStaticParams() {
   return supportedLanguages.map((lang) => ({ lang }));
@@ -27,45 +28,7 @@ export default async function WelcomePage({
         </p>
       </div>
 
-      {/* Entry / Keybox Instructions */}
-      <div className="mb-10">
-        <div className="flex items-center gap-2.5 mb-5">
-          <KeyRound size={18} className="text-accent" />
-          <h2 className="text-base font-medium text-text tracking-wide">
-            {content.entryTitle}
-          </h2>
-        </div>
-
-        <div className="space-y-4">
-          {content.entrySteps.map((step, i) => (
-            <div
-              key={i}
-              className="p-5 rounded-2xl bg-white border border-border"
-            >
-              <div className="flex gap-4 items-start">
-                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-accent/15 flex items-center justify-center">
-                  <span className="text-sm font-semibold text-accent">{i + 1}</span>
-                </div>
-                <div className="flex-1 pt-0.5">
-                  <h3 className="font-medium text-sm text-text mb-1.5">
-                    {step.title}
-                  </h3>
-                  <p className="text-sm text-text-muted font-light leading-relaxed">
-                    {step.instruction}
-                  </p>
-                </div>
-              </div>
-              {/* Image placeholder for each step */}
-              <div className="mt-4 aspect-[16/9] rounded-xl bg-warm/50 border-2 border-dashed border-border/60 flex flex-col items-center justify-center gap-1.5">
-                <ImageIcon size={24} className="text-text-muted/30" strokeWidth={1.5} />
-                <span className="text-[11px] text-text-muted/40 font-light">Photo placeholder</span>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Essentials: Wi-Fi, Phone, Emergency, Location */}
+      {/* Essentials: Wi-Fi, Phone, Emergency, Location, Entry */}
       <div className="mb-10">
         <div className="flex items-center gap-2.5 mb-5">
           <Wifi size={18} className="text-accent" />
@@ -97,6 +60,11 @@ export default async function WelcomePage({
             label={content.locationLabel}
             value={content.locationValue}
             mapUrl={content.locationMapUrl}
+          />
+
+          <EntryCard
+            label={content.entryButtonLabel}
+            href={`/${lang}/entry`}
           />
         </div>
       </div>
@@ -229,5 +197,26 @@ function LocationCard({
         Map
       </a>
     </div>
+  );
+}
+
+function EntryCard({
+  label,
+  href,
+}: {
+  label: string;
+  href: string;
+}) {
+  return (
+    <Link
+      href={href}
+      className="flex items-center justify-between p-5 rounded-2xl bg-white border border-border hover:border-accent/40 transition-colors print:break-inside-avoid"
+    >
+      <div className="flex items-center gap-3">
+        <KeyRound size={16} className="text-accent" />
+        <p className="font-medium text-sm text-text">{label}</p>
+      </div>
+      <ChevronRight size={18} className="text-text-muted" />
+    </Link>
   );
 }
