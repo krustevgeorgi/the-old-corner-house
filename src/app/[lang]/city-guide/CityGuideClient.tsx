@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import MapEmbed from "@/components/MapEmbed";
+import { ImageIcon, ExternalLink, MapPin } from "lucide-react";
 import type { Category } from "@/data/content";
 
 export default function CityGuideClient({ categories }: { categories: Category[] }) {
@@ -28,40 +28,57 @@ export default function CityGuideClient({ categories }: { categories: Category[]
         </div>
       </div>
 
-      <div className="px-6 space-y-4">
+      <div className="px-6 space-y-5">
         {activeCategory.places.map((place, pi) => (
           <div
             key={pi}
             className="rounded-2xl bg-white border border-border overflow-hidden"
           >
-            {place.mapUrl && (
-              <iframe
-                src={place.mapUrl}
-                width="100%"
-                height="140"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title={`Map: ${place.name}`}
-              />
-            )}
+            {/* Cover photo placeholder */}
+            <div className="relative aspect-[16/9] bg-warm/40 flex flex-col items-center justify-center gap-2">
+              <ImageIcon size={32} className="text-text-muted/25" strokeWidth={1.5} />
+              <span className="text-xs text-text-muted/35 font-light">Cover photo</span>
+              {/* Place name overlay */}
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/50 to-transparent px-5 pb-4 pt-8">
+                <h3 className="font-medium text-sm text-white drop-shadow-sm">{place.name}</h3>
+              </div>
+            </div>
+
             <div className="p-5">
-              <h3 className="font-medium text-sm mb-1">{place.name}</h3>
               {place.details && (
-                <p className="text-xs text-text-muted font-light mb-4">
-                  {place.details}
-                </p>
+                <div className="flex items-start gap-2 mb-4">
+                  <MapPin size={14} className="text-accent flex-shrink-0 mt-0.5" />
+                  <p className="text-xs text-text-muted font-light leading-relaxed">
+                    {place.details}
+                  </p>
+                </div>
               )}
+
+              {/* Map preview */}
+              {place.mapUrl && (
+                <div className="rounded-xl overflow-hidden border border-border mb-4">
+                  <iframe
+                    src={place.mapUrl}
+                    width="100%"
+                    height="160"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title={`Map: ${place.name}`}
+                  />
+                </div>
+              )}
+
               {place.mapsLink && (
                 <a
                   href={place.mapsLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-warm-light border border-border text-xs font-medium text-text hover:bg-warm transition-colors"
+                  className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-accent/10 text-accent text-xs font-medium hover:bg-accent/20 transition-colors"
                 >
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-accent"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
-                  Open in Maps
+                  <ExternalLink size={14} />
+                  Open in Google Maps
                 </a>
               )}
             </div>
