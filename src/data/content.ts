@@ -8,6 +8,17 @@ export const languageNames: Record<Lang, string> = {
   ru: "Русский",
 };
 
+export const languageFlags: Record<Lang, string> = {
+  en: "🇬🇧",
+  bg: "🇧🇬",
+  ru: "🇷🇺",
+};
+
+export interface EntryStep {
+  title: string;
+  instruction: string;
+}
+
 export interface WelcomeContent {
   title: string;
   intro: string;
@@ -19,6 +30,12 @@ export interface WelcomeContent {
   phoneValue: string;
   emergencyLabel: string;
   emergencyValue: string;
+  locationLabel: string;
+  locationValue: string;
+  locationMapUrl: string;
+  entryTitle: string;
+  entrySteps: EntryStep[];
+  essentialsTitle: string;
 }
 
 export interface RulesContent {
@@ -104,6 +121,29 @@ export const guidebookContent: Record<Lang, LangContent> = {
       phoneValue: "+359 87 9606986",
       emergencyLabel: "Emergency Number:",
       emergencyValue: "112",
+      locationLabel: "Property Address:",
+      locationValue: "The Old Corner House, Velingrad",
+      locationMapUrl: "https://www.google.com/maps/search/?api=1&query=The+Old+Corner+House+Velingrad",
+      essentialsTitle: "Essentials",
+      entryTitle: "How to Enter the Property",
+      entrySteps: [
+        {
+          title: "Step 1: Find the Keybox",
+          instruction: "The keybox is located next to the front door on the left side of the entrance.",
+        },
+        {
+          title: "Step 2: Open the Keybox",
+          instruction: "Enter the code [INSERT CODE] on the keybox dial and pull the latch down to open.",
+        },
+        {
+          title: "Step 3: Get the Key",
+          instruction: "Take the key from inside the keybox. Use it to unlock the front door.",
+        },
+        {
+          title: "Step 4: When Leaving",
+          instruction: "Lock the front door, place the key back in the keybox, and scramble the code.",
+        },
+      ],
     },
     rules: {
       title: "House Rules",
@@ -328,6 +368,29 @@ export const guidebookContent: Record<Lang, LangContent> = {
       phoneValue: "+359 87 9606986",
       emergencyLabel: "Спешни случаи:",
       emergencyValue: "112",
+      locationLabel: "Адрес на имота:",
+      locationValue: "The Old Corner House, Велинград",
+      locationMapUrl: "https://www.google.com/maps/search/?api=1&query=The+Old+Corner+House+Velingrad",
+      essentialsTitle: "Основна информация",
+      entryTitle: "Как да влезете в имота",
+      entrySteps: [
+        {
+          title: "Стъпка 1: Намерете кутията за ключ",
+          instruction: "Кутията за ключ се намира до входната врата, от лявата страна на входа.",
+        },
+        {
+          title: "Стъпка 2: Отворете кутията",
+          instruction: "Въведете кода [ВЪВЕДЕТЕ КОД] на циферблата и издърпайте резето надолу, за да отворите.",
+        },
+        {
+          title: "Стъпка 3: Вземете ключа",
+          instruction: "Вземете ключа от кутията. Използвайте го, за да отключите входната врата.",
+        },
+        {
+          title: "Стъпка 4: При напускане",
+          instruction: "Заключете входната врата, поставете ключа обратно в кутията и разбъркайте кода.",
+        },
+      ],
     },
     rules: {
       title: "Правила на дома",
@@ -553,6 +616,29 @@ export const guidebookContent: Record<Lang, LangContent> = {
       phoneValue: "+359 87 9606986",
       emergencyLabel: "Экстренные службы:",
       emergencyValue: "112",
+      locationLabel: "Адрес объекта:",
+      locationValue: "The Old Corner House, Велинград",
+      locationMapUrl: "https://www.google.com/maps/search/?api=1&query=The+Old+Corner+House+Velingrad",
+      essentialsTitle: "Основная информация",
+      entryTitle: "Как попасть в квартиру",
+      entrySteps: [
+        {
+          title: "Шаг 1: Найдите ключницу",
+          instruction: "Ключница находится рядом с входной дверью, слева от входа.",
+        },
+        {
+          title: "Шаг 2: Откройте ключницу",
+          instruction: "Введите код [ВВЕДИТЕ КОД] на циферблате и потяните защёлку вниз, чтобы открыть.",
+        },
+        {
+          title: "Шаг 3: Возьмите ключ",
+          instruction: "Достаньте ключ из ключницы. Используйте его, чтобы открыть входную дверь.",
+        },
+        {
+          title: "Шаг 4: При выходе",
+          instruction: "Заприте входную дверь, верните ключ в ключницу и перемешайте код.",
+        },
+      ],
     },
     rules: {
       title: "Правила проживания",
@@ -770,6 +856,7 @@ export const guidebookContent: Record<Lang, LangContent> = {
 export const navLabels: Record<Lang, Record<string, string>> = {
   en: {
     home: "Home",
+    photos: "Photos",
     rules: "Rules",
     appliances: "Appliances",
     bikes: "Bikes",
@@ -778,6 +865,7 @@ export const navLabels: Record<Lang, Record<string, string>> = {
   },
   bg: {
     home: "Начало",
+    photos: "Снимки",
     rules: "Правила",
     appliances: "Уреди",
     bikes: "Колела",
@@ -786,6 +874,7 @@ export const navLabels: Record<Lang, Record<string, string>> = {
   },
   ru: {
     home: "Главная",
+    photos: "Фото",
     rules: "Правила",
     appliances: "Техника",
     bikes: "Велосипеды",

@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { supportedLanguages, languageNames, type Lang } from "@/data/content";
+import { supportedLanguages, languageNames, languageFlags, type Lang } from "@/data/content";
 
 export default function LandingPage() {
   const router = useRouter();
@@ -23,13 +23,14 @@ export default function LandingPage() {
           </p>
         </div>
 
-        <div className="space-y-3">
+        <div className="space-y-4">
           {supportedLanguages.map((lang) => (
             <button
               key={lang}
               onClick={() => selectLang(lang)}
-              className="w-full py-4 px-6 bg-white text-text font-light rounded-2xl border border-border hover:border-accent hover:shadow-sm transition-all text-lg tracking-wide"
+              className="w-full py-5 px-6 bg-white text-text font-light rounded-2xl border border-border hover:border-accent hover:shadow-sm transition-all text-lg tracking-wide flex items-center justify-center gap-3"
             >
+              <span className="text-2xl">{languageFlags[lang]}</span>
               {languageNames[lang]}
             </button>
           ))}

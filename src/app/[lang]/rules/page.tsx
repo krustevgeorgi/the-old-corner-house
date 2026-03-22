@@ -41,19 +41,19 @@ export default async function RulesPage({
   const content = guidebookContent[lang as Lang]?.rules ?? guidebookContent.en.rules;
 
   return (
-    <div className="pt-14">
+    <div className="pt-14 pb-28">
       <div className="px-6 mb-2">
         <BackLink href={`/${lang}`} />
       </div>
       <PageHeader title={content.title} icon={<ScrollText size={20} />} />
 
-      <div className="px-6 py-5 space-y-2.5">
+      <div className="px-6 py-6 space-y-4">
         {content.items.map((rule, i) => {
           const Icon = ruleIcons[i] || ScrollText;
           return (
             <div
               key={i}
-              className="flex gap-3.5 p-4 rounded-2xl bg-white border border-border print:break-inside-avoid"
+              className="flex gap-4 p-5 rounded-2xl bg-white border border-border print:break-inside-avoid"
             >
               <div className="flex-shrink-0 w-9 h-9 rounded-xl bg-warm flex items-center justify-center print:bg-gray-100">
                 <Icon size={17} className="text-primary" strokeWidth={1.5} />

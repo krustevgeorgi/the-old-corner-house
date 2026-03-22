@@ -17,7 +17,7 @@ export default async function CityGuidePage({
   const content = guidebookContent[lang as Lang]?.cityGuide ?? guidebookContent.en.cityGuide;
 
   return (
-    <div className="pt-14">
+    <div className="pt-14 pb-28">
       <div className="px-6 mb-2">
         <BackLink href={`/${lang}`} />
       </div>
