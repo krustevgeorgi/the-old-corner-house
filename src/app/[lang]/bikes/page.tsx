@@ -18,13 +18,13 @@ export default async function BikesPage({
   const content = guidebookContent[lang as Lang]?.bikes ?? guidebookContent.en.bikes;
 
   return (
-    <div className="pt-14">
+    <div className="pt-14 pb-28">
       <div className="px-6 mb-2">
         <BackLink href={`/${lang}`} />
       </div>
       <PageHeader title={content.title} icon={<Bike size={20} />} />
 
-      <div className="px-6 py-5 space-y-3">
+      <div className="px-6 py-6 space-y-5">
         <p className="text-sm text-text-muted font-light leading-relaxed">
           {content.intro}
         </p>
@@ -41,7 +41,7 @@ export default async function BikesPage({
           return (
             <div
               key={i}
-              className="flex gap-3.5 p-4 rounded-2xl bg-white border border-border print:bg-white print:border-gray-300 print:break-inside-avoid"
+              className="flex gap-4 p-5 rounded-2xl bg-white border border-border print:bg-white print:border-gray-300 print:break-inside-avoid"
             >
               <div className="flex-shrink-0 w-9 h-9 rounded-xl bg-warm flex items-center justify-center">
                 <Icon size={17} className="text-primary" strokeWidth={1.5} />

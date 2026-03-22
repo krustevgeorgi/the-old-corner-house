@@ -60,13 +60,13 @@ export default async function TrailsPage({
   ];
 
   return (
-    <div className="pt-14">
+    <div className="pt-14 pb-28">
       <div className="px-6 mb-2">
         <BackLink href={`/${lang}`} />
       </div>
       <PageHeader title={content.title} icon={<TreePine size={20} />} />
 
-      <div className="px-6 py-5 space-y-5">
+      <div className="px-6 py-6 space-y-6">
         <div className="p-3.5 bg-warm/50 border border-border rounded-2xl text-xs leading-relaxed text-text-muted font-light print:bg-white print:border-gray-300 print:text-black">
           {content.note}
         </div>

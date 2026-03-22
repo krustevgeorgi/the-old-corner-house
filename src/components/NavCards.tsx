@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import {
-  Home,
+  Camera,
   ScrollText,
   Settings,
   Bike,
@@ -12,7 +12,7 @@ import {
 import { navLabels, type Lang } from "@/data/content";
 
 const navItems = [
-  { key: "home", href: "", icon: Home, image: "/images/home.jpeg", gradient: "from-amber-900/70" },
+  { key: "photos", href: "/photos", icon: Camera, image: "/images/home.jpeg", gradient: "from-amber-900/70" },
   { key: "rules", href: "/rules", icon: ScrollText, image: "/images/home.jpeg", gradient: "from-stone-900/70" },
   { key: "appliances", href: "/appliances", icon: Settings, image: "/images/appliances.jpeg", gradient: "from-zinc-900/70" },
   { key: "bikes", href: "/bikes", icon: Bike, image: "/images/bicycles.jpeg", gradient: "from-emerald-900/70" },
@@ -24,7 +24,7 @@ export default function NavCards({ lang }: { lang: Lang }) {
   const labels = navLabels[lang] || navLabels.en;
 
   return (
-    <div className="grid grid-cols-2 gap-3 print:hidden">
+    <div className="grid grid-cols-2 gap-3.5 print:hidden">
       {navItems.map(({ key, href, icon: Icon, image, gradient }) => {
         const fullHref = `/${lang}${href}`;
 

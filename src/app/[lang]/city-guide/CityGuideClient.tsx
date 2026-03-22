@@ -9,14 +9,14 @@ export default function CityGuideClient({ categories }: { categories: Category[]
   const activeCategory = categories[activeIdx];
 
   return (
-    <div className="py-4">
-      <div className="px-5 mb-5 overflow-x-auto scrollbar-hide">
-        <div className="flex gap-2 min-w-max">
+    <div className="py-5">
+      <div className="px-6 mb-6 overflow-x-auto scrollbar-hide">
+        <div className="flex gap-2.5 min-w-max">
           {categories.map((cat, i) => (
             <button
               key={i}
               onClick={() => setActiveIdx(i)}
-              className={`px-4 py-2 rounded-full text-xs font-medium whitespace-nowrap transition-all ${
+              className={`px-5 py-2.5 rounded-full text-xs font-medium whitespace-nowrap transition-all ${
                 i === activeIdx
                   ? "bg-primary text-white shadow-sm"
                   : "bg-warm-light text-text-muted border border-border hover:bg-warm"
@@ -28,7 +28,7 @@ export default function CityGuideClient({ categories }: { categories: Category[]
         </div>
       </div>
 
-      <div className="px-5 space-y-3">
+      <div className="px-6 space-y-4">
         {activeCategory.places.map((place, pi) => (
           <div
             key={pi}
@@ -46,10 +46,10 @@ export default function CityGuideClient({ categories }: { categories: Category[]
                 title={`Map: ${place.name}`}
               />
             )}
-            <div className="p-4">
-              <h3 className="font-medium text-sm mb-0.5">{place.name}</h3>
+            <div className="p-5">
+              <h3 className="font-medium text-sm mb-1">{place.name}</h3>
               {place.details && (
-                <p className="text-xs text-text-muted font-light mb-3">
+                <p className="text-xs text-text-muted font-light mb-4">
                   {place.details}
                 </p>
               )}
