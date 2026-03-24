@@ -17,6 +17,8 @@ export const languageFlags: Record<Lang, string> = {
 export interface EntryStep {
   title: string;
   instruction: string;
+  images: string[];
+  tip?: string;
 }
 
 export interface WelcomeContent {
@@ -130,20 +132,47 @@ export const guidebookContent: Record<Lang, LangContent> = {
       entryButtonLabel: "Entry Instructions",
       entrySteps: [
         {
-          title: "Step 1: Find the Keybox",
-          instruction: "The keybox is located next to the front door on the left side of the entrance.",
+          title: "Find the House",
+          instruction: "Look for the pinkish corner house. The address is кв. Лъджене, ul. \"Vincho Goranov\" 39.",
+          images: ["/images/exterior.jpg"],
         },
         {
-          title: "Step 2: Open the Keybox",
-          instruction: "Enter the code [INSERT CODE] on the keybox dial and pull the latch down to open.",
+          title: "Open the Yard Door",
+          instruction: "On the left side of the house you will see a metal yard door with the number 39 on it.",
+          images: ["/images/yard door.jpg"],
         },
         {
-          title: "Step 3: Get the Key",
-          instruction: "Take the key from inside the keybox. Use it to unlock the front door.",
+          title: "Unlock the Door Latch",
+          instruction: "Look under the door hatch — there is a sliding lock mechanism. Slide it to the right with your finger to unlock the door.",
+          images: ["/images/yard door lock.jpg", "/images/yard door lock locked.jpg", "/images/yard door lock unlocked.jpg"],
+          tip: "Slide left-to-right to unlock, right-to-left to lock.",
         },
         {
-          title: "Step 4: When Leaving",
-          instruction: "Lock the front door, place the key back in the keybox, and scramble the code.",
+          title: "Find the Lockbox",
+          instruction: "After entering the yard, look to your left. On the inner side of the fence pillar there is a black lockbox mounted on the wall.",
+          images: ["/images/lockbox with cover.jpg"],
+        },
+        {
+          title: "Open the Lockbox",
+          instruction: "Flip open the protective cover to reveal the combination dials. Enter the code provided to you and pull the metal lid down to open.",
+          images: ["/images/lockbox uncovered.jpg", "/images/lockbox unlocked.jpg"],
+          tip: "After taking the keys, scramble the code and close the cover.",
+        },
+        {
+          title: "Unlock the House Door",
+          instruction: "Turn around — the brown wooden door directly behind you is the house entrance. Use one of the keys to unlock it.",
+          images: ["/images/house door.jpg"],
+        },
+        {
+          title: "Unlock the Apartment Door",
+          instruction: "After entering, on your right-hand side you will see a lighter wooden door — this is the apartment door. Use the other key to unlock it.",
+          images: ["/images/apartment door.jpg"],
+        },
+        {
+          title: "When Leaving",
+          instruction: "Please lock all doors when you leave. Important: to lock the house door, the lever must be lifted UP first, then turn the key to lock.",
+          images: ["/images/house door lever lifted to lock.jpg"],
+          tip: "Lift the handle up, then turn the key. Return the keys to the lockbox and scramble the code.",
         },
       ],
     },
@@ -378,20 +407,47 @@ export const guidebookContent: Record<Lang, LangContent> = {
       entryButtonLabel: "Инструкции за вход",
       entrySteps: [
         {
-          title: "Стъпка 1: Намерете кутията за ключ",
-          instruction: "Кутията за ключ се намира до входната врата, от лявата страна на входа.",
+          title: "Намерете къщата",
+          instruction: "Потърсете розовата ъглова къща. Адресът е кв. Лъджене, ул. \"Винчо Горанов\" 39.",
+          images: ["/images/exterior.jpg"],
         },
         {
-          title: "Стъпка 2: Отворете кутията",
-          instruction: "Въведете кода [ВЪВЕДЕТЕ КОД] на циферблата и издърпайте резето надолу, за да отворите.",
+          title: "Отворете дворната врата",
+          instruction: "От лявата страна на къщата ще видите метална дворна врата с номер 39.",
+          images: ["/images/yard door.jpg"],
         },
         {
-          title: "Стъпка 3: Вземете ключа",
-          instruction: "Вземете ключа от кутията. Използвайте го, за да отключите входната врата.",
+          title: "Отключете ключалката",
+          instruction: "Погледнете под капачето на вратата — там има плъзгащ се механизъм. Плъзнете го надясно с пръст, за да отключите вратата.",
+          images: ["/images/yard door lock.jpg", "/images/yard door lock locked.jpg", "/images/yard door lock unlocked.jpg"],
+          tip: "Наляво-надясно за отключване, надясно-наляво за заключване.",
         },
         {
-          title: "Стъпка 4: При напускане",
-          instruction: "Заключете входната врата, поставете ключа обратно в кутията и разбъркайте кода.",
+          title: "Намерете кутията за ключове",
+          instruction: "След като влезете в двора, погледнете наляво. На вътрешната страна на стълба на оградата има черна кутия за ключове.",
+          images: ["/images/lockbox with cover.jpg"],
+        },
+        {
+          title: "Отворете кутията за ключове",
+          instruction: "Отворете защитния капак, за да разкриете цифровите дискове. Въведете предоставения ви код и издърпайте металния капак надолу.",
+          images: ["/images/lockbox uncovered.jpg", "/images/lockbox unlocked.jpg"],
+          tip: "След като вземете ключовете, разбъркайте кода и затворете капака.",
+        },
+        {
+          title: "Отключете входната врата",
+          instruction: "Обърнете се — кафявата дървена врата зад вас е входът на къщата. Използвайте единия ключ, за да я отключите.",
+          images: ["/images/house door.jpg"],
+        },
+        {
+          title: "Отключете вратата на апартамента",
+          instruction: "След като влезете, от дясната ви страна ще видите по-светла дървена врата — това е вратата на апартамента. Отключете я с другия ключ.",
+          images: ["/images/apartment door.jpg"],
+        },
+        {
+          title: "При напускане",
+          instruction: "Моля, заключете всички врати. Важно: за да заключите входната врата, дръжката трябва да се повдигне НАГОРЕ, след което завъртете ключа.",
+          images: ["/images/house door lever lifted to lock.jpg"],
+          tip: "Повдигнете дръжката нагоре, след което завъртете ключа. Върнете ключовете в кутията и разбъркайте кода.",
         },
       ],
     },
@@ -627,20 +683,47 @@ export const guidebookContent: Record<Lang, LangContent> = {
       entryButtonLabel: "Инструкции по входу",
       entrySteps: [
         {
-          title: "Шаг 1: Найдите ключницу",
-          instruction: "Ключница находится рядом с входной дверью, слева от входа.",
+          title: "Найдите дом",
+          instruction: "Ищите розовый угловой дом. Адрес: кв. Лъджене, ул. \"Винчо Горанов\" 39.",
+          images: ["/images/exterior.jpg"],
         },
         {
-          title: "Шаг 2: Откройте ключницу",
-          instruction: "Введите код [ВВЕДИТЕ КОД] на циферблате и потяните защёлку вниз, чтобы открыть.",
+          title: "Откройте дворовую калитку",
+          instruction: "С левой стороны дома вы увидите металлическую калитку с номером 39.",
+          images: ["/images/yard door.jpg"],
         },
         {
-          title: "Шаг 3: Возьмите ключ",
-          instruction: "Достаньте ключ из ключницы. Используйте его, чтобы открыть входную дверь.",
+          title: "Разблокируйте засов",
+          instruction: "Загляните под крышку калитки — там есть скользящий механизм замка. Сдвиньте его вправо пальцем, чтобы разблокировать.",
+          images: ["/images/yard door lock.jpg", "/images/yard door lock locked.jpg", "/images/yard door lock unlocked.jpg"],
+          tip: "Слева направо — разблокировать, справа налево — заблокировать.",
         },
         {
-          title: "Шаг 4: При выходе",
-          instruction: "Заприте входную дверь, верните ключ в ключницу и перемешайте код.",
+          title: "Найдите ключницу",
+          instruction: "Войдя во двор, посмотрите налево. На внутренней стороне столба ограды установлена чёрная ключница.",
+          images: ["/images/lockbox with cover.jpg"],
+        },
+        {
+          title: "Откройте ключницу",
+          instruction: "Откиньте защитную крышку, чтобы увидеть кодовые диски. Введите предоставленный вам код и потяните металлическую крышку вниз.",
+          images: ["/images/lockbox uncovered.jpg", "/images/lockbox unlocked.jpg"],
+          tip: "После извлечения ключей перемешайте код и закройте крышку.",
+        },
+        {
+          title: "Откройте входную дверь",
+          instruction: "Повернитесь — коричневая деревянная дверь прямо за вами является входом в дом. Используйте один из ключей.",
+          images: ["/images/house door.jpg"],
+        },
+        {
+          title: "Откройте дверь квартиры",
+          instruction: "Войдя внутрь, справа вы увидите более светлую деревянную дверь — это дверь квартиры. Откройте её вторым ключом.",
+          images: ["/images/apartment door.jpg"],
+        },
+        {
+          title: "При выходе",
+          instruction: "Пожалуйста, запирайте все двери при выходе. Важно: чтобы запереть входную дверь, ручку нужно поднять ВВЕРХ, затем повернуть ключ.",
+          images: ["/images/house door lever lifted to lock.jpg"],
+          tip: "Поднимите ручку вверх, затем поверните ключ. Верните ключи в ключницу и перемешайте код.",
         },
       ],
     },
