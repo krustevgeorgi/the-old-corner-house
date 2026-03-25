@@ -13,7 +13,7 @@ import { navLabels, type Lang } from "@/data/content";
 
 const navItems = [
   { key: "photos", href: "/photos", icon: Camera, image: "/images/home.jpeg", gradient: "from-amber-900/70" },
-  { key: "rules", href: "/rules", icon: ScrollText, image: "/images/home.jpeg", gradient: "from-stone-900/70" },
+  { key: "rules", href: "/rules", icon: ScrollText, image: "/images/house-rules.jpg", gradient: "from-stone-900/70" },
   { key: "appliances", href: "/appliances", icon: Settings, image: "/images/appliances.jpeg", gradient: "from-zinc-900/70" },
   { key: "bikes", href: "/bikes", icon: Bike, image: "/images/bicycles.jpeg", gradient: "from-emerald-900/70" },
   { key: "city-guide", href: "/city-guide", icon: MapPin, image: "/images/city-guide.jpeg", gradient: "from-sky-900/70" },
