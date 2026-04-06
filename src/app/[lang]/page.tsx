@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { guidebookContent, supportedLanguages, type Lang } from "@/data/content";
 import NavCards from "@/components/NavCards";
-import { Wifi, Phone, ShieldAlert, MapPin, KeyRound, ExternalLink, ChevronRight } from "lucide-react";
+import { Wifi, Phone, ShieldAlert, MapPin, KeyRound, ExternalLink, ChevronRight, DoorOpen } from "lucide-react";
 
 export function generateStaticParams() {
   return supportedLanguages.map((lang) => ({ lang }));
@@ -28,23 +28,39 @@ export default async function WelcomePage({
         </p>
       </div>
 
-      {/* Essentials: Wi-Fi, Phone, Emergency, Location, Entry */}
-      <div className="mb-10">
+      {/* Arrival & Access */}
+      <div className="mb-8">
         <div className="flex items-center gap-2.5 mb-5">
-          <Wifi size={18} className="text-accent" />
+          <KeyRound size={18} className="text-accent" />
           <h2 className="text-base font-medium text-text tracking-wide">
-            {content.essentialsTitle}
+            {content.arrivalTitle}
           </h2>
         </div>
 
         <div className="space-y-4">
-          <WifiCard
-            networkLabel={content.wifiLabel}
-            network={content.wifiValue}
-            passLabel={content.passLabel}
-            password={content.passValue}
+          <LocationCard
+            label={content.locationLabel}
+            value={content.locationValue}
+            mapUrl={content.locationMapUrl}
           />
 
+          <EntryCard
+            label={content.entryButtonLabel}
+            href={`/${lang}/entry`}
+          />
+        </div>
+      </div>
+
+      {/* Contact Information */}
+      <div className="mb-8">
+        <div className="flex items-center gap-2.5 mb-5">
+          <Phone size={18} className="text-accent" />
+          <h2 className="text-base font-medium text-text tracking-wide">
+            {content.contactTitle}
+          </h2>
+        </div>
+
+        <div className="space-y-4">
           <PhoneCard
             icon={<Phone size={16} className="text-accent" />}
             label={content.phoneLabel}
@@ -55,16 +71,24 @@ export default async function WelcomePage({
             label={content.emergencyLabel}
             value={content.emergencyValue}
           />
+        </div>
+      </div>
 
-          <LocationCard
-            label={content.locationLabel}
-            value={content.locationValue}
-            mapUrl={content.locationMapUrl}
-          />
+      {/* Wi-Fi */}
+      <div className="mb-10">
+        <div className="flex items-center gap-2.5 mb-5">
+          <Wifi size={18} className="text-accent" />
+          <h2 className="text-base font-medium text-text tracking-wide">
+            {content.wifiTitle}
+          </h2>
+        </div>
 
-          <EntryCard
-            label={content.entryButtonLabel}
-            href={`/${lang}/entry`}
+        <div className="space-y-4">
+          <WifiCard
+            networkLabel={content.wifiLabel}
+            network={content.wifiValue}
+            passLabel={content.passLabel}
+            password={content.passValue}
           />
         </div>
       </div>
@@ -88,10 +112,6 @@ function WifiCard({
 }) {
   return (
     <div className="p-5 rounded-2xl bg-white border border-border print:break-inside-avoid">
-      <div className="flex items-center gap-2 mb-4">
-        <Wifi size={16} className="text-accent" />
-        <span className="text-xs font-medium text-text uppercase tracking-wider">Wi-Fi</span>
-      </div>
       <div className="space-y-3 mb-4">
         <div>
           <p className="text-[11px] text-text-muted tracking-wide uppercase mb-0.5">{networkLabel}</p>
@@ -210,13 +230,20 @@ function EntryCard({
   return (
     <Link
       href={href}
-      className="flex items-center justify-between p-5 rounded-2xl bg-white border border-border hover:border-accent/40 transition-colors print:break-inside-avoid"
+      className="block p-5 rounded-2xl bg-gradient-to-br from-accent/15 via-accent/10 to-accent/5 border border-accent/25 hover:from-accent/20 hover:via-accent/15 hover:to-accent/10 transition-all print:break-inside-avoid"
     >
-      <div className="flex items-center gap-3">
-        <KeyRound size={16} className="text-accent" />
-        <p className="font-medium text-sm text-text">{label}</p>
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-4">
+          <div className="w-10 h-10 rounded-xl bg-accent/20 flex items-center justify-center">
+            <DoorOpen size={20} className="text-accent" />
+          </div>
+          <div>
+            <p className="font-semibold text-sm text-text">{label}</p>
+            <p className="text-xs text-text-muted mt-0.5">Step-by-step with photos</p>
+          </div>
+        </div>
+        <ChevronRight size={18} className="text-accent" />
       </div>
-      <ChevronRight size={18} className="text-text-muted" />
     </Link>
   );
 }

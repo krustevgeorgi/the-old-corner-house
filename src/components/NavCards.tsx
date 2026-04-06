@@ -2,22 +2,22 @@
 
 import Link from "next/link";
 import {
-  Camera,
   ScrollText,
   Settings,
   Bike,
   MapPin,
   TreePine,
+  HelpCircle,
 } from "lucide-react";
 import { navLabels, type Lang } from "@/data/content";
 
 const navItems = [
-  { key: "photos", href: "/photos", icon: Camera, image: "/images/home.jpeg", gradient: "from-amber-900/70" },
-  { key: "rules", href: "/rules", icon: ScrollText, image: "/images/home.jpeg", gradient: "from-stone-900/70" },
-  { key: "appliances", href: "/appliances", icon: Settings, image: "/images/appliances.jpeg", gradient: "from-zinc-900/70" },
-  { key: "bikes", href: "/bikes", icon: Bike, image: "/images/bicycles.jpeg", gradient: "from-emerald-900/70" },
+  { key: "rules", href: "/rules", icon: ScrollText, image: "/images/house-rules.png", gradient: "from-stone-900/70" },
   { key: "city-guide", href: "/city-guide", icon: MapPin, image: "/images/city-guide.jpeg", gradient: "from-sky-900/70" },
   { key: "trails", href: "/trails", icon: TreePine, image: "https://images.unsplash.com/photo-1501555088652-021faa106b9b?w=400&h=300&fit=crop&q=80", gradient: "from-green-900/70" },
+  { key: "bikes", href: "/bikes", icon: Bike, image: "/images/bicycles.jpeg", gradient: "from-emerald-900/70" },
+  { key: "appliances", href: "/appliances", icon: Settings, image: "/images/appliances.jpeg", gradient: "from-zinc-900/70" },
+  { key: "faq", href: "/faq", icon: HelpCircle, image: "/images/home.jpeg", gradient: "from-indigo-900/70" },
 ];
 
 export default function NavCards({ lang }: { lang: Lang }) {

@@ -34,10 +34,20 @@ export default function CityGuideClient({ categories }: { categories: Category[]
             key={pi}
             className="rounded-2xl bg-white border border-border overflow-hidden"
           >
-            {/* Cover photo placeholder */}
-            <div className="relative aspect-[16/9] bg-warm/40 flex flex-col items-center justify-center gap-2">
-              <ImageIcon size={32} className="text-text-muted/25" strokeWidth={1.5} />
-              <span className="text-xs text-text-muted/35 font-light">Cover photo</span>
+            {/* Cover photo */}
+            <div className="relative aspect-[16/9] bg-warm/40 flex flex-col items-center justify-center gap-2 overflow-hidden">
+              {place.coverImage ? (
+                <img
+                  src={place.coverImage}
+                  alt={place.name}
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+              ) : (
+                <>
+                  <ImageIcon size={32} className="text-text-muted/25" strokeWidth={1.5} />
+                  <span className="text-xs text-text-muted/35 font-light">Cover photo</span>
+                </>
+              )}
               {/* Place name overlay */}
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/50 to-transparent px-5 pb-4 pt-8">
                 <h3 className="font-medium text-sm text-white drop-shadow-sm">{place.name}</h3>
