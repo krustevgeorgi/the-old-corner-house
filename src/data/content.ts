@@ -42,6 +42,8 @@ export interface WelcomeContent {
   arrivalTitle: string;
   contactTitle: string;
   wifiTitle: string;
+  wifiCopyButton: string;
+  wifiCopied: string;
 }
 
 export interface RulesContent {
@@ -146,6 +148,8 @@ export const guidebookContent: Record<Lang, LangContent> = {
       arrivalTitle: "Arrival & Access",
       contactTitle: "Contact Information",
       wifiTitle: "Wi-Fi",
+      wifiCopyButton: "Copy Password",
+      wifiCopied: "Copied!",
       entryTitle: "How to Enter the Property",
       entryButtonLabel: "Entry Instructions",
       entrySteps: [
@@ -460,6 +464,8 @@ export const guidebookContent: Record<Lang, LangContent> = {
       arrivalTitle: "Пристигане и достъп",
       contactTitle: "Информация за контакт",
       wifiTitle: "Wi-Fi",
+      wifiCopyButton: "Копирай парола",
+      wifiCopied: "Копирано!",
       entryTitle: "Как да влезете в имота",
       entryButtonLabel: "Инструкции за вход",
       entrySteps: [
@@ -775,6 +781,8 @@ export const guidebookContent: Record<Lang, LangContent> = {
       arrivalTitle: "Прибытие и доступ",
       contactTitle: "Контактная информация",
       wifiTitle: "Wi-Fi",
+      wifiCopyButton: "Копировать пароль",
+      wifiCopied: "Скопировано!",
       entryTitle: "Как попасть в квартиру",
       entryButtonLabel: "Инструкции по входу",
       entrySteps: [

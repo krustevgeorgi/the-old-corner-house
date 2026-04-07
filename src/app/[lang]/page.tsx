@@ -2,6 +2,7 @@ import Link from "next/link";
 import { guidebookContent, supportedLanguages, type Lang } from "@/data/content";
 import NavCards from "@/components/NavCards";
 import { Wifi, Phone, ShieldAlert, MapPin, KeyRound, ExternalLink, ChevronRight, DoorOpen } from "lucide-react";
+import WifiCard from "@/components/WifiCard";
 
 export function generateStaticParams() {
   return supportedLanguages.map((lang) => ({ lang }));
@@ -89,46 +90,14 @@ export default async function WelcomePage({
             network={content.wifiValue}
             passLabel={content.passLabel}
             password={content.passValue}
+            copyButtonLabel={content.wifiCopyButton}
+            copiedLabel={content.wifiCopied}
           />
         </div>
       </div>
 
       {/* Navigation Cards */}
       <NavCards lang={lang as Lang} />
-    </div>
-  );
-}
-
-function WifiCard({
-  networkLabel,
-  network,
-  passLabel,
-  password,
-}: {
-  networkLabel: string;
-  network: string;
-  passLabel: string;
-  password: string;
-}) {
-  return (
-    <div className="p-5 rounded-2xl bg-white border border-border print:break-inside-avoid">
-      <div className="space-y-3 mb-4">
-        <div>
-          <p className="text-[11px] text-text-muted tracking-wide uppercase mb-0.5">{networkLabel}</p>
-          <p className="font-medium text-sm text-text">{network}</p>
-        </div>
-        <div>
-          <p className="text-[11px] text-text-muted tracking-wide uppercase mb-0.5">{passLabel}</p>
-          <p className="font-medium text-sm text-text font-mono">{password}</p>
-        </div>
-      </div>
-      <a
-        href={`WIFI:T:WPA;S:${network};P:${password};;`}
-        className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-accent/10 text-accent text-xs font-medium hover:bg-accent/20 transition-colors print:hidden"
-      >
-        <Wifi size={14} />
-        Connect to Wi-Fi
-      </a>
     </div>
   );
 }
